@@ -1,0 +1,26 @@
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <nav></nav>
+    <script>
+        const rutas = {
+            Github: "https://github.com/BAAC007"
+        };
+    
+        let contenedor = document.querySelector("nav");
+    
+        Object.keys(rutas).forEach(nombre => {
+            let boton = document.createElement("button");
+            boton.textContent = nombre;
+            contenedor.appendChild(boton);
+    
+            boton.onclick = () => {
+                window.location.href = rutas[nombre];
+            };
+        });
+    </script>
+</body>
+</html>

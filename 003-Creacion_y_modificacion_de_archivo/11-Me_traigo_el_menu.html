@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body{height: 100%; padding: 0px; margin: 0px; display: flex; width: 100%;}
+            nav{background: orange; flex: 1; color: whitesmoke;}
+            main{flex: 4; background: darkorange;}
+        </style>
+    </head>
+    <body>
+        <nav>Botones | El Bry</nav>
+        <main>2</main>
+        <style>
+            nav{display: flex; flex-direction: column; gap: 20px;}
+            nav button{border: none; background: white; color: tomato; padding: 20px;}
+        </style>
+        <script>
+            //Ves y busca
+            fetch("botones.json")
+            .then(function(respuesta){
+                return respuesta.json();
+            })
+            .then(function(datos){
+                let contenedor = document.querySelector("nav")
+                datos.forEach(function(texto_boton){
+                    let boton = document.createElement("button")
+                    boton.textContent = texto_boton;
+                    contenedor.appendChild(boton)
+                });
+            })
+        </script>
+    </body>
+</html>

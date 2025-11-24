@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body{height: 100%; padding: 0px; margin: 0px; display: flex; width: 100%;}
+            nav{background: lightslategray; flex: 1; color: whitesmoke;}
+            main{flex: 4; background: rgba(202, 20, 20, 0.89);}
+        </style>
+    </head>
+    <body>
+        <nav>Botones | El Bry</nav>
+        <style>
+            nav{display: flex; flex-direction: column; gap: 20px;}
+            nav button{border: none; background: white; color: tomato; padding: 20px;}
+        </style>
+        <script>
+            //Ves y busca
+            fetch("botones.json")
+            .then(function(respuesta){
+                return respuesta.json();
+            })
+            .then(function(datos){
+                let contenedor = document.querySelector("nav")
+                datos.forEach(function(texto_boton){
+                    let boton = document.createElement("button")
+                    boton.textContent = texto_boton;
+                    contenedor.appendChild(boton)
+                });
+            })
+        </script>
+        <main>Contenido de la tabla de clientes</main>
+        <style>
+            table{
+                border: 3px solid darkred; border-collapse: collapse; background: white;
+            }
+            table tr:first-child{
+                background: darkred; color:white;
+            }
+            table tr td{
+                padding: 10px; border-right: 1px solid darkred;
+            }
+        </style>
+        <script>
+            //Ves y busca
+            fetch("tabla.json")
+            .then(function(respuesta){
+                return respuesta.json();
+            })
+            .then(function(datos){
+                //Selecciono el contenedor de la tabla
+                let contenedor = document.querySelector("main");
+                //Primero creo una tabla en memoria
+                let tabla = document.createElement("table");
+                //Al cuerpo le añado la tabla
+                contenedor.appendChild(tabla);
+                //Para cada una de las lineas del json:
+                datos.forEach(function(linea){
+                    //Primero creo una fila - table row
+                    let fila = document.createElement("tr")
+                    //Ahora creo tantas celdas como sea necesario
+                    linea.forEach(function(celda){
+                        //Creo una celda vacia HTML
+                        let data = document.createElement("td");
+                        //Le pongo el texto a la celda
+                        data.textContent = celda
+                        //A la fila le añado la celda
+                        fila.appendChild(data);
+                    })
+                    //A la tabla le añado esta fila
+                    tabla.appendChild(fila)
+                });
+            })
+        </script>
+    </body>
+</html>
