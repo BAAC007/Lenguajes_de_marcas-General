@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Javascript</title>
+    <meta charset="utf-8">
+    <style>
+        #rojo {
+            color: red;
+        }
+
+        #verde {
+            color: green;
+        }
+
+        #azul {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rojo"></div>
+    <div id="verde"></div>
+    <div id="azul"></div>
+    <script>
+        document.querySelector("#rojo").textContent = "texto rojo";
+        document.querySelector("#verde").textContent = "texto verde";
+        document.querySelector("#azul").textContent = "texto azul";
+    </script>
+    <hr>
+    <p>Soy un párrafo</p>
+    <script>
+        // Selecciono el elemento que tenga la etiqueta p
+        const elemento = document.querySelector("p");
+        document.write(elemento);
+        document.write(elemento.textContent);
+    </script>
+    <hr>
+    <div></div>
+    <script>
+        document.querySelector("div").innerHTML = "<h1>Hola</h1>";
+
+    </script>
+    <main>
+        <script>
+            const articulos = [
+                "Primer artículo", "Segundo artículo", "Tercer artículo"
+            ];
+            const contenedor = document.querySelector("main");
+            for (let i = 0; i < articulos.length; i++) {  // Recorro los artículos
+                contenedor.innerHTML += "<h3>" + articulos[i] + "</h3>";
+            }
+        </script>
+    </main>
+</body>
+
+</html>
