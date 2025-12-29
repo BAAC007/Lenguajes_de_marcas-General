@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+  <nombre>Bryan Alejandro</nombre>
+  <apellidos>Avila Castro</apellidos>
+  <telefonos>
+    <telefono>987654321</telefono>
+  </telefonos>
+</persona>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+  <nombre>Hudson Leon</nombre>
+  <apellidos>Abader</apellidos>
+  <telefonos>
+    <telefono>12344321</telefono>
+    <telefono>98765589</telefono>
+  </telefonos>
+</persona>

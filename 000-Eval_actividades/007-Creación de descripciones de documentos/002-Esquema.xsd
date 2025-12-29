@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definir el tipo complejo para la persona -->
+  <xs:complexType name="PersonaType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="apellidos" type="xs:string"/>
+      <xs:element name="telefonos" type="TelefonosType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Definir el tipo complejo para los números de teléfono -->
+  <xs:complexType name="TelefonosType">
+    <xs:sequence>
+      <xs:element name="telefono" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Definir la raíz del documento XML -->
+  <xs:element name="persona" type="PersonaType"/>
+
+</xs:schema>
